@@ -1,10 +1,6 @@
 {
 	"files": [],
-	"include": [
-		".nitro/types/nitro-imports.d.ts",
-		"**/*.config.ts",
-		"src/**/*.{tsx,ts}"
-	],
+	"include": ["**/*.config.ts", "src/**/*.ts", "src/**/*.tsx"],
 	"exclude": [
 		"node_modules",
 		"**/node_modules/*",

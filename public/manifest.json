@@ -1,8 +1,8 @@
 {
 	"manifest_version": 3,
-	"name": "Node Screenshot",
+	"name": "Chrome Extension Template",
 	"version": "1.0.0",
-	"description": "Click any HTML element to screenshot it. Click = clipboard, Ctrl+Click = download.",
+	"description": "",
 	"action": {
 		"default_popup": "index.html"
 	},
