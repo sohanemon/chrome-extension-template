@@ -3,6 +3,11 @@
 	"name": "Chrome Extension Template",
 	"version": "1.0.0",
 	"description": "",
+	"icons": {
+		"16": "generated/icon-16.png",
+		"48": "generated/icon-48.png",
+		"128": "generated/icon-128.png"
+	},
 	"action": {
 		"default_popup": "index.html"
 	},
