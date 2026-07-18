@@ -24,7 +24,7 @@
 		"react-dom": "^19.2.7"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.15",
+		"@biomejs/biome": "2.5.4",
 		"@tailwindcss/vite": "^4.3.3",
 		"@types/chrome": "^0.2.0",
 		"@types/react": "^19.2.17",
