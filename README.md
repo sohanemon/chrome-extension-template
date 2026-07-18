@@ -1,6 +1,8 @@
 # Chrome Extension Template
 
-![icon](/public/icon.png)
+<p align="center">
+  <img src="/public/icon.png" width="128" alt="Chrome Extension Template icon" />
+</p>
 
 A modern Chrome extension starter with Vite, React 19, TypeScript 7, Tailwind CSS v4, and the React Compiler.
 
