@@ -18,7 +18,7 @@
 			"#/*": ["./src/*"]
 		},
 		"lib": ["ES2022", "DOM", "DOM.Iterable"],
-		"types": ["vite/client", "chrome"],
+		"types": ["vite/client", "@crxjs/vite-plugin/client", "chrome"],
 
 		/* Bundler mode */
 		"moduleResolution": "bundler",

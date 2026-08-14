@@ -16,7 +16,8 @@
 		"lint": "biome lint",
 		"check": "biome check",
 		"generate:colors": "bash scripts/generate-theme-aliases.sh",
-		"sync": "bun run generate:colors && bash scripts/generate-icons.sh",
+		"generate:icons": "bun scripts/extract-icons.ts",
+		"sync": "bun run generate:colors && bun run generate:icons",
 		"preview": "vite preview",
 		"prebuild": "bun run sync"
 	},
@@ -36,7 +37,8 @@
 		"babel-plugin-react-compiler": "^1.0.0",
 		"tailwindcss": "^4.3.3",
 		"typescript": "^7.0.2",
-		"vite": "^8.1.5"
+		"vite": "^8.1.5",
+		"vite-plugin-zip-pack": "^1.2.4"
 	},
 	"license": "MIT",
 	"keywords": [
