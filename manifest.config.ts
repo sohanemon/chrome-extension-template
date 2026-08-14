@@ -16,6 +16,13 @@ export default defineManifest({
 		page: 'src/entries/options/index.html',
 		open_in_tab: true,
 	},
+	devtools_page: 'src/entries/devtools/index.html',
+	chrome_url_overrides: {
+		newtab: 'src/entries/newtab/index.html',
+	},
+	side_panel: {
+		default_path: 'src/entries/sidepanel/index.html',
+	},
 	background: {
 		service_worker: 'src/entries/background/index.ts',
 		type: 'module',
@@ -27,7 +34,14 @@ export default defineManifest({
 			run_at: 'document_idle',
 		},
 	],
-	permissions: ['activeTab', 'storage', 'scripting', 'tabs', 'downloads'],
+	permissions: [
+		'activeTab',
+		'storage',
+		'scripting',
+		'tabs',
+		'downloads',
+		'sidePanel',
+	],
 	icons: {
 		16: 'generated/icon-16.png',
 		48: 'generated/icon-48.png',
