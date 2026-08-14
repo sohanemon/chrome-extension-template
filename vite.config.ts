@@ -1,7 +1,8 @@
+import { crx } from '@crxjs/vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
 import viteReact from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
+import manifest from './manifest.config';
 
 export default defineConfig({
 	plugins: [
@@ -12,25 +13,11 @@ export default defineConfig({
 			},
 		}),
 		tailwindcss(),
-		viteStaticCopy({
-			targets: [{ src: 'public/manifest.json', dest: '.' }],
-		}),
+		crx({ manifest }),
 	],
-	build: {
-		outDir: 'build',
-		rollupOptions: {
-			input: {
-				main: './index.html',
-				background: './src/background.ts',
-				content: './src/content.ts',
-			},
-			output: {
-				entryFileNames: (chunkInfo) => {
-					if (chunkInfo.name === 'background') return 'background.js';
-					if (chunkInfo.name === 'content') return 'content.js';
-					return 'assets/[name]-[hash].js';
-				},
-			},
+	server: {
+		cors: {
+			origin: [/chrome-extension:\/\//],
 		},
 	},
 });

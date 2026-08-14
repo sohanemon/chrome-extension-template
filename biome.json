@@ -6,7 +6,7 @@
 	"linter": {
 		"enabled": true,
 		"rules": { "recommended": true },
-		"includes": ["src/**", "!dist", "!build", "!src/test"]
+		"includes": ["src/**", "!dist", "!src/test"]
 	},
 	"javascript": { "formatter": { "quoteStyle": "single" } },
 	"assist": {

@@ -11,7 +11,6 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc -b && vite build",
-		"build:watch": "vite build --watch",
 		"format": "biome format",
 		"lint": "biome lint",
 		"check": "biome check",
@@ -26,6 +25,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.4",
+		"@crxjs/vite-plugin": "^2.7.1",
 		"@tailwindcss/vite": "^4.3.3",
 		"@types/chrome": "^0.2.0",
 		"@types/react": "^19.2.17",
@@ -34,7 +34,6 @@
 		"babel-plugin-react-compiler": "^1.0.0",
 		"tailwindcss": "^4.3.3",
 		"typescript": "^7.0.2",
-		"vite": "^8.1.5",
-		"vite-plugin-static-copy": "^4.1.1"
+		"vite": "^8.1.5"
 	}
 }

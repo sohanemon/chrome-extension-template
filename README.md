@@ -4,7 +4,7 @@
   <img src="/public/icon.png" width="128" alt="Chrome Extension Template icon" />
 </p>
 
-A modern Chrome extension starter with Vite, React 19, TypeScript 7, Tailwind CSS v4, and the React Compiler.
+A modern Chrome extension (MV3) starter with Vite, React 19, TypeScript 7, Tailwind CSS v4, the React Compiler, and full HMR via `@crxjs/vite-plugin`.
 
 ## Getting Started
 
@@ -16,13 +16,13 @@ bun install
 bun run build
 ```
 
-Load the `build/` directory in Chrome via `chrome://extensions` → **Load unpacked**.
+Load the `dist/` directory in Chrome via `chrome://extensions` → **Load unpacked**.
 
 ## Development
 
 ```bash
-bun run dev       # Vite dev server (for popup UI)
-bun run build     # Production build → build/
+bun run dev       # Dev server with HMR for popup, background, and content scripts
+bun run build     # Production build → dist/
 bun run preview   # Preview the production build
 ```
 
@@ -49,8 +49,7 @@ bun run check    # Biome check (lint + format)
 ```
 ├── public/
 │   ├── icon.png            # Source icon (required)
-│   ├── generated/          # Auto-generated icon sizes
-│   └── manifest.json       # Chrome extension manifest (MV3)
+│   └── generated/          # Auto-generated icon sizes
 ├── src/
 │   ├── background.ts       # Service worker
 │   ├── content.ts          # Content script (injected into pages)
@@ -59,7 +58,8 @@ bun run check    # Biome check (lint + format)
 │   └── styles/index.css    # Tailwind + CSS variables
 ├── scripts/
 │   └── generate-icons.sh   # Icon resizing script
-├── vite.config.ts          # Vite config (multi-entry build)
+├── manifest.config.ts      # MV3 manifest (CRXJS defineManifest)
+├── vite.config.ts          # Vite config (CRXJS plugin)
 ├── tsconfig.json           # TypeScript config
 ├── biome.json              # Linter & formatter config
 └── components.json         # shadcn/ui config
