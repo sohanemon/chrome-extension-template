@@ -4,13 +4,16 @@
 	"files": { "ignoreUnknown": false },
 	"formatter": { "enabled": true, "indentStyle": "tab" },
 	"linter": {
-		"enabled": true,
-		"rules": { "recommended": true },
-		"includes": ["src/**", "!dist", "!src/test"]
+		"enabled": true
 	},
 	"javascript": { "formatter": { "quoteStyle": "single" } },
 	"assist": {
 		"enabled": true,
 		"actions": { "source": { "organizeImports": "on" } }
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
 	}
 }

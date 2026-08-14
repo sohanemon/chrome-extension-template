@@ -1,5 +1,5 @@
 import { useStorage } from '../../hooks/use-storage';
-import type { StorageSchema } from '../../types/storage';
+import type { StorageSchema } from '../../types/storage.types';
 
 export default function App() {
 	const [count] = useStorage<StorageSchema, 'count'>('sync', 'count', 0);

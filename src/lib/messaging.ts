@@ -1,4 +1,4 @@
-import type { Message, MessageType, ResponseOf } from '../types/messages';
+import type { Message, MessageType, ResponseOf } from '../types/messages.types';
 
 // INFO: Chrome's sendMessage returns Promise<any>; this cast restores type safety.
 export function sendMessage<T extends MessageType>(
