@@ -1,5 +1,5 @@
 import { Iconify } from '@sohanemon/utils/components';
-
+import { Button } from '@/components/ui/button';
 import { useStorage } from '../../hooks/use-storage';
 import {
 	openNewTab,
@@ -38,7 +38,7 @@ export default function App() {
 		{
 			label: 'New Tab',
 			description: 'Open the custom new tab page',
-			icon: 'lucide:external-window',
+			icon: 'gridicons:external',
 			action: openNewTab,
 		},
 	];
@@ -61,22 +61,23 @@ export default function App() {
 			<section className="flex flex-col items-center gap-4">
 				<h2 className="text-sm font-medium">Shared Count</h2>
 				<div className="flex items-center gap-3">
-					<button
-						type="button"
+					<Button
 						onClick={() => setCount((prev) => Math.max(0, prev - 1))}
 						disabled={count === 0}
+						size="icon"
 						className="rounded border px-3 py-1 text-sm disabled:opacity-40"
 					>
 						-
-					</button>
+					</Button>
 					<span className="tabular-nums text-xl">{count}</span>
-					<button
+					<Button
+						size="icon"
 						type="button"
 						onClick={() => setCount((prev) => prev + 1)}
 						className="rounded border px-3 py-1 text-sm"
 					>
 						+
-					</button>
+					</Button>
 				</div>
 				<p className="text-xs text-muted-foreground">
 					Synced via chrome.storage.sync
