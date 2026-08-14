@@ -2,6 +2,18 @@
 
 export const iconsMetadata = [
   {
+    "prefix": "gridicons",
+    "lastModified": 1780375030,
+    "aliases": {},
+    "width": 24,
+    "height": 24,
+    "icons": {
+      "external": {
+        "body": "<path fill=\"currentColor\" d=\"M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6v2H5v12h12v-6zM13 3v2h4.586l-7.793 7.793l1.414 1.414L19 6.414V11h2V3z\"/>"
+      }
+    }
+  },
+  {
     "prefix": "lucide",
     "lastModified": 1786336045,
     "aliases": {},
@@ -17,9 +29,6 @@ export const iconsMetadata = [
       "x": {
         "body": "<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M18 6L6 18M6 6l12 12\"/>"
       }
-    },
-    "not_found": [
-      "external-window"
-    ]
+    }
   }
 ] as const;

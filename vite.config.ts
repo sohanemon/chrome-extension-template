@@ -1,4 +1,3 @@
-import path from 'node:path';
 import { crx } from '@crxjs/vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
 import viteReact from '@vitejs/plugin-react';
@@ -15,15 +14,10 @@ export default defineConfig({
 			},
 		}),
 		tailwindcss(),
-		crx({ manifest }),
+		crx({ manifest, browser: 'chrome' }),
 		zip({ outDir: 'release', outFileName: 'release.zip' }),
 	],
-	resolve: {
-		alias: {
-			'@': path.resolve(__dirname, './src'),
-			'~': path.resolve(__dirname, './'),
-		},
-	},
+	resolve: { tsconfigPaths: true },
 	server: {
 		cors: {
 			origin: [/chrome-extension:\/\//],
