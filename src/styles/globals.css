@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "./colors.css";
 
+@theme inline {
+	--radius: 0.25rem;
+}
+
 @layer base {
 	* {
 		border-color: hsl(var(--border));

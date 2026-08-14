@@ -4,8 +4,8 @@
 export type ColorName =
 	| "background"
 	| "foreground"
-	| "card"
-	| "card-foreground"
+	| "panel"
+	| "panel-foreground"
 	| "popover"
 	| "popover-foreground"
 	| "primary"
@@ -14,13 +14,16 @@ export type ColorName =
 	| "secondary-foreground"
 	| "accent"
 	| "accent-foreground"
-	| "destructive"
-	| "destructive-foreground"
 	| "muted"
 	| "muted-foreground"
 	| "border"
 	| "input"
 	| "ring"
+	| "grid"
+	| "tick"
+	| "glare"
+	| "destructive"
+	| "destructive-foreground"
 	| "radius";
 
 export type ColorRecord = Record<ColorName, string>;
