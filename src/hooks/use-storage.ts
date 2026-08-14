@@ -2,11 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import type { StorageArea } from '../lib/storage';
 import { getItem, setItems, watchItem } from '../lib/storage';
 
-/**
- * React state backed by a single `chrome.storage` key. Reads on mount, writes
- * through on change, and stays in sync with external updates via
- * `storage.onChanged`.
- */
+// INFO: Keeps React state in sync with chrome.storage, including external changes via storage.onChanged.
 export function useStorage<T, K extends keyof T>(
 	areaName: StorageArea,
 	key: K,

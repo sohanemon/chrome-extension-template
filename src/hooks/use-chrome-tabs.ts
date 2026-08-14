@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react';
 
-/**
- * Reactive view of the current window's tabs, kept in sync with the
- * `chrome.tabs` lifecycle events.
- */
+// INFO: Subscribes to chrome.tabs lifecycle events so the tab list stays reactive across window changes.
 export function useChromeTabs() {
 	const [tabs, setTabs] = useState<chrome.tabs.Tab[]>([]);
 

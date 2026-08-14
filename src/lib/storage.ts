@@ -1,11 +1,4 @@
-/**
- * Typed wrapper around `chrome.storage` with Promise-based get/set/remove.
- *
- * The generic `T` describes the full shape of a storage area. Keys are
- * constrained to `keyof T` so reads and writes stay consistent with the
- * shared types in `src/types`. Chrome's own typings are cast once, at the
- * boundary, to keep call sites clean.
- */
+// INFO: Cast Chrome's loosely-typed storage API once at the boundary so call sites stay type-safe.
 export type StorageArea = chrome.storage.AreaName;
 
 export interface StorageChange<T> {
@@ -25,7 +18,6 @@ interface ChromeStore {
 const area = (name: StorageArea): ChromeStore =>
 	chrome.storage[name] as unknown as ChromeStore;
 
-/** Read a single key. */
 export async function getItem<T, K extends keyof T>(
 	areaName: StorageArea,
 	key: K,
@@ -34,7 +26,6 @@ export async function getItem<T, K extends keyof T>(
 	return result[key as string] as T[K] | undefined;
 }
 
-/** Read several keys. Returns only the keys that were found. */
 export async function getItems<T, K extends keyof T>(
 	areaName: StorageArea,
 	keys: K[],
@@ -42,12 +33,10 @@ export async function getItems<T, K extends keyof T>(
 	return area(areaName).get(keys as string[]) as Promise<Partial<T>>;
 }
 
-/** Read the entire storage area. */
 export async function getAll<T>(areaName: StorageArea): Promise<T> {
 	return area(areaName).get(null) as Promise<T>;
 }
 
-/** Write a partial object. */
 export async function setItems<T>(
 	areaName: StorageArea,
 	items: Partial<T>,
@@ -55,7 +44,6 @@ export async function setItems<T>(
 	await area(areaName).set(items as Record<string, unknown>);
 }
 
-/** Remove one or more keys. */
 export async function removeItems<T>(
 	areaName: StorageArea,
 	keys: keyof T | Array<keyof T>,
@@ -63,12 +51,11 @@ export async function removeItems<T>(
 	await area(areaName).remove(keys as string | string[]);
 }
 
-/** Clear the entire storage area. */
 export async function clearArea(areaName: StorageArea): Promise<void> {
 	await area(areaName).clear();
 }
 
-/** Subscribe to changes for a single key. Returns an unsubscribe function. */
+// INFO: Returns an unsubscribe function; call it on unmount to prevent stale-listener leaks.
 export function watchItem<T, K extends keyof T>(
 	areaName: StorageArea,
 	key: K,
@@ -86,7 +73,7 @@ export function watchItem<T, K extends keyof T>(
 	return () => chrome.storage.onChanged.removeListener(handler);
 }
 
-/** Subscribe to all changes in an area. Returns an unsubscribe function. */
+// INFO: Returns an unsubscribe function; call it on unmount to prevent stale-listener leaks.
 export function watchArea<T>(
 	areaName: StorageArea,
 	listener: (

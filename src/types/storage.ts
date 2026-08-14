@@ -1,8 +1,4 @@
-/**
- * Shared storage schema. Keys live in `chrome.storage.sync` (default) or
- * `chrome.storage.local`; the typed helpers in `src/lib/storage.ts` constrain
- * reads and writes to this shape.
- */
+// INFO: Single source of truth for storage shape; typed helpers in src/lib/storage.ts enforce this.
 export interface StorageSchema {
 	count: number;
 }
