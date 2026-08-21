@@ -16,8 +16,9 @@
 		"lint": "biome lint",
 		"check": "biome check",
 		"generate:colors": "bash scripts/generate-theme-aliases.sh",
-		"generate:icons": "bun scripts/extract-icons.ts",
-		"sync": "bun run generate:colors && bun run generate:icons",
+		"generate:icons": "bash scripts/generate-icons.sh",
+		"extract:icons": "bun scripts/extract-icons.ts",
+		"sync": "bun run generate:colors && bun run generate:icons && bun run extract:icons",
 		"preview": "vite preview",
 		"prebuild": "bun run sync"
 	},
