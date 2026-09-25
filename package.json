@@ -37,7 +37,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.4",
-		"@crxjs/vite-plugin": "^2.7.1",
+		"@crxjs/vite-plugin": "^3.0.0",
 		"@tailwindcss/vite": "^4.3.3",
 		"@types/chrome": "^0.2.0",
 		"@types/node": "^26.2.0",
